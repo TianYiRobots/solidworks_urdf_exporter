@@ -1,6 +1,8 @@
 # SolidWorks to URDF Exporter
 
-Authored and maintained by [Stephen Brawner](brawner@gmail.com). Past supporters include [PickNik Consulting](https://picknik.ai), Verb Surgical, Open Robotics, and Willow Garage. 
+English | [简体中文](./README_zh.md)
+
+Authored and maintained by [Stephen Brawner](brawner@gmail.com). Past supporters include [PickNik Consulting](https://picknik.ai), Verb Surgical, Open Robotics, and Willow Garage.
 
 ## Modifications from upstream (1.6.1)
 
