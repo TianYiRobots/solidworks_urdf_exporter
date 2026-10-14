@@ -81,10 +81,10 @@ namespace SW2URDF.URDF
         public void SetMomentMatrix(double[] array)
         {
             Ixx = array[0];
-            Ixy = -array[1];
-            Ixz = -array[2];
+            Ixy = array[1];
+            Ixz = array[2];
             Iyy = array[4];
-            Iyz = -array[5];
+            Iyz = array[5];
             Izz = array[8];
         }
 
