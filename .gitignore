@@ -1,0 +1,22 @@
+﻿# Build output
+bin/
+obj/
+*.user
+*.suo
+.vs/
+
+# NuGet packages (restore on build)
+packages/
+
+# Test runner output
+TestRunner/bin/
+TestRunner/obj/
+
+# Local verify scratch
+VerifyInertia.exe
+*.pdb
+*.userprefs
+
+# Packaging scratch
+pkg/
+SW2URDF_Setup.exe
