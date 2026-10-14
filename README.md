@@ -12,6 +12,11 @@ This fork fixes issues that made the exported URDF inconsistent with SolidWorks 
 2. **Inertia product sign** — `Inertia.SetMomentMatrix` had a double negation on the off-diagonal terms (Ixy/Ixz/Iyz). The extra minus sign is removed.
 3. **Joint axis direction** — `GetRefAxis` and `LocalizeJoint` now normalize the axis so the first non-zero component is positive. Previously an axis could come out as `[-1,0,0]`, `[0,-1,0]` or `[0,0,-1]`, which flipped the joint's positive direction and broke joint limits.
 
+### Tested on
+
+- **SolidWorks 2025**: full verification passed — mass, center of mass, diagonal inertia (Ixx/Iyy/Izz) and products of inertia (Ixy/Iyz/Ixz) all match the SolidWorks Mass Properties dialog.
+- **SolidWorks 2021**: diagonal inertia matches; products of inertia show small deviations compared to SolidWorks 2025. The diagonal terms and mass are reliable.
+
 ## Latest Release
 https://github.com/ros/solidworks_urdf_exporter/releases/tag/1.6.0
 

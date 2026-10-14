@@ -17,6 +17,11 @@
 3. **关节轴方向规整**
    `GetRefAxis` 和 `LocalizeJoint` 现在会把轴向量归一化，使第一个非零分量为正。原先轴可能出现 `[-1,0,0]`、`[0,-1,0]` 或 `[0,0,-1]`，会翻转关节正方向、导致关节限位错误。
 
+### 测试验证
+
+- **SolidWorks 2025**：全部通过 — 质量、质心位置、对角惯量（Ixx/Iyy/Izz）和惯性积（Ixy/Iyz/Ixz）均与 SolidWorks「质量属性」对话框一致。
+- **SolidWorks 2021**：对角惯量正确；惯性积（Ixy/Iyz/Ixz）相比 2025 存在微小偏差。质量和对角项可靠。
+
 ## 最新版本
 
 https://github.com/ros/solidworks_urdf_exporter/releases/tag/1.6.0
