@@ -20,3 +20,6 @@ VerifyInertia.exe
 # Packaging scratch
 pkg/
 SW2URDF_Setup.exe
+
+# Local math verification script
+VerifyInertia.cs
