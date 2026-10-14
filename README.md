@@ -2,6 +2,14 @@
 
 Authored and maintained by [Stephen Brawner](brawner@gmail.com). Past supporters include [PickNik Consulting](https://picknik.ai), Verb Surgical, Open Robotics, and Willow Garage. 
 
+## Modifications from upstream (1.6.1)
+
+This fork fixes issues that made the exported URDF inconsistent with SolidWorks mass properties:
+
+1. **Inertia tensor matches SolidWorks mass properties** — The original `ComputeInertialProperties` aggregated bodies via `AddBodies`, which gave wrong link inertia for assemblies. It now reads each leaf part's mass properties directly from its document and composes link inertia using the parallel-axis theorem, so the exported `inertial` block matches what SolidWorks shows in `Mass Properties`.
+2. **Inertia product sign** — `Inertia.SetMomentMatrix` had a double negation on the off-diagonal terms (Ixy/Ixz/Iyz). The extra minus sign is removed.
+3. **Joint axis direction** — `GetRefAxis` and `LocalizeJoint` now normalize the axis so the first non-zero component is positive. Previously an axis could come out as `[-1,0,0]`, `[0,-1,0]` or `[0,0,-1]`, which flipped the joint's positive direction and broke joint limits.
+
 ## Latest Release
 https://github.com/ros/solidworks_urdf_exporter/releases/tag/1.6.0
 
